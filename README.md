@@ -29,3 +29,20 @@ forge create src/DcaFactory.sol:DcaFactory \
     --constructor-args <chainlink_cron_up_keep_factory_address> <link_token_address> \
     --verify
 ```
+
+
+# DCA architecture
+
+## Sequence diagram
+<img src="./static/chainlink keeper SeqDiag.png" width="100%">
+
+### Legends
+- **CL registery owner**: Chainlink keeper registery owner (can approve new cron registration)
+- **Final user**: DCA customer
+- **Nested DCA**: Nested DCA factory contract
+- **CL cron factory**: Chainlink Cron factory contract (only used to deploy cron contract)
+- **Link token**: Chainlink link token (ERC677)
+- **CL keeper registrar**: Chainlink keepers registrar (used to request a new cron contract registration into Chainlink nodes network)  
+- **CL keeper registry**: Chainlink keeper registry
+- **Deployed cron contract**: A cron contract deployed by the CL cron factory (only used to call another contract when the cron is ran)
+- **Target contract**: The final target contract that is called at each cron run.
