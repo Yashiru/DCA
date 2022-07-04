@@ -1,4 +1,4 @@
-# R&D DCA
+# R&D DCA with chainlink
 This repository is a Solidity project aiming to create a solution for the creation of 100% automatic [DCA](https://en.wikipedia.org/wiki/Dollar_cost_averaging) positions through the use of chainlink keepers.
 The project is managed with [Foundry](https://book.getfoundry.sh/).
 
